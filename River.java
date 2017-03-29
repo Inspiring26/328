@@ -64,20 +64,16 @@ public class River
 			//boat at left
 			//a yeren goto other side
 			if (boat==0) {
-				
+				System.out.println("start from left to right!");
 			
-			if ((a0>=1)&&((a0-1)<=b0)&&((a1+1)<=b1)) {
+			if ((a0>=1)&&((a0-1)<=b0)) {
 				a0=a0-1;a1=a1+1;boat=1;
 				System.out.println("a yeren left to right");
 				System.out.println("left yeren chuanjiaoshi:"+a0+" "+b0+"right:"+a1+" "+b1);
 			}
-			if ((a0>=1)&&((a1+1)>b1)&&(b1==0)) {
-				a0=a0-1;a1=a1+1;boat=1;
-				System.out.println("a yeren left to right");
-				System.out.println("left yeren chuanjiaoshi:"+a0+" "+b0+"right:"+a1+" "+b1);
-			}
+			
 			//a chuanjiaoshi goto other side
-			if ((b0>=1)&&(a0<=(b0-1))&&(a1<=(b1+1))) {
+			if ((b0>=1)&&(a0<=(b0-1))) {
 				b0=b0-1;b1=b1+1;boat=1;
 				System.out.println("a chuanjiaoshi left to right");
 				System.out.println("left yeren chuanjiaoshi:"+a0+" "+b0+"right:"+a1+" "+b1);
@@ -88,24 +84,24 @@ public class River
 				System.out.println("left yeren chuanjiaoshi:"+a0+" "+b0+"right:"+a1+" "+b1);
 			}
 			//a chuanjiaoshi a yeren goto other side
-			if ((a0>=1)&&(b0>=1)&&(a0<=b0)&&(a1<=b1)) {
+			if ((a0>=1)&&(b0>=1)&&(a0<=b0)) {
 				a0=a0-1;b0=b0-1;a1=a1+1;b1=b1+1;boat=1;
 				System.out.println("a chuanjiaoshi a yeren left to right");
 				System.out.println("left yeren chuanjiaoshi:"+a0+" "+b0+"right:"+a1+" "+b1);
 			}
 			//two yeren goto other side
-			if ((a0>=2)&&((a0-2)<b0)&&((a1+2)<=b1)) {
+			if ((a0>=2)&&((a0-2)<b0)) {
 				a0=a0-2;a1=a1+2;boat=1;
 				System.out.println("two yeren left to right");
 				System.out.println("left yeren chuanjiaoshi:"+a0+" "+b0+"right:"+a1+" "+b1);
 			}
-			if ((a0>=2)&&((a1+2)>b1)&&(b1==0)) {
+			if ((a0>=2)&&((a0-2)>b0)&&(b0==0)) {
 				a0=a0-2;a1=a1+2;boat=1;
 				System.out.println("two yeren left to right");
 				System.out.println("left yeren chuanjiaoshi:"+a0+" "+b0+"right:"+a1+" "+b1);
 			}
 			//two chuanjiaoshi goto other side
-			if ((b0>=2)&&(a0<=(b0-2))&&(a1<=(b1+2))) {
+			if ((b0>=2)&&(a0<=(b0-2))) {
 				b0=b0-2;b1=b1+2;boat=1;
 				System.out.println("two chuanjiaoshi left to right");
 				System.out.println("left yeren chuanjiaoshi:"+a0+" "+b0+"right:"+a1+" "+b1);
