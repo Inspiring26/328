@@ -7,7 +7,7 @@ writer=cv.CreateVideoWriter("output.avi", cv.CV_FOURCC('D', 'I', 'V', 'X'), 15, 
 
 count=0
 while count<50:
-    print count
+    #print count
     image=cv.QueryFrame(capture)
     cv.WriteFrame(writer, image)
     cv.ShowImage('Image_Window',image)
