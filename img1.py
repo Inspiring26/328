@@ -1,15 +1,17 @@
+import cv2
 import cv2.cv as cv
+color_img=cv2.imread("330.jpg")
+gray_img=cv2.cvtColor(color_img,cv2.COLOR_BGR2GRAY)
 
-capture=cv.CaptureFromCAM(0)
-temp=cv.QueryFrame(capture)
-writer=cv.CreateVideoWriter("output.avi", cv.CV_FOURCC('D', 'I', 'V', 'X'), 15, cv.GetSize(temp), 1)
-#On linux I used to take "M","J","P","G" as fourcc
+cv2.imshow("image1",color_img)
+cv2.waitKey(3000)
 
-count=0
-while count<50:
-    #print count
-    image=cv.QueryFrame(capture)
-    cv.WriteFrame(writer, image)
-    cv.ShowImage('Image_Window',image)
-    cv.WaitKey(1)
-    count+=1
+cv2.imshow("image2",gray_img)
+cv2.waitKey(3000)
+
+retval, im_at_fixed = cv2.threshold(gray_img, 50, 255, cv2.THRESH_BINARY) 
+cv2.imshow("stable",im_at_fixed)
+
+cv2.waitKey(3000)
+
+cv2.destroyAllWindows()
