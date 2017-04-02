@@ -1,15 +1,14 @@
-import numpy as np
-import cv2
+import cv2.cv as cv
 
-cap = cv2.VideoCapture(0)
-out = cv2.VideoWriter('out.avi',-1, 20.0, (640,480))
-while(cap.isOpened()):
-        ret, frame = cap.read()
-        frame = cv2.flip(frame,0)
-        out.write(frame)
-        cv2.imshow('frame',frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
-cap.release()
-out.release()
-cv2.destroyAllWindows()
+capture=cv.CaptureFromCAM(0)
+temp=cv.QueryFrame(capture)
+writer=cv.CreateVideoWriter("output.avi",cv.CV_FOURCC('D', 'I', 'V', 'X'),15,cv.GetSize(temp),1)
+count=0
+while count<50:
+	print count
+	image=cv.QueryFrame(capture)
+	cv.WriteFrame(writer,image)
+	cv.ShowImage("image_windows",image)
+	cv.WaitKey(1)
+	count+=1
+
